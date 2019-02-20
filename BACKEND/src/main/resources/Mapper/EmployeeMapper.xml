@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.BACKEND.Dao.EmployeeDao">
+    <resultMap id="EmployeeResultMap" type="com.example.BACKEND.Entity.Employee">
+        <result column="USERID" jdbcType="VARCHAR" property="userid"/>
+        <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+        <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+    </resultMap>
+    <select id="getAllEmployee"  parameterType="map" resultType="com.example.BACKEND.Entity.Employee">
+        select t.* from EMPLOYEE t
+    </select>
+    <select id="getEmployeeByUsername" parameterType="map" resultMap="EmployeeResultMap">
+  	    select t.* from EMPLOYEE t where t.USERNAME=#{username} and t.PASSWORD=#{password}
+    </select>
+</mapper>

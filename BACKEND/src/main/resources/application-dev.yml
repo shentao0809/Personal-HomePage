@@ -1,0 +1,13 @@
+#开发环境
+server:
+  port: 8080
+data:
+  test:
+    envName: dev(开发环境)
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource  # 使用阿里的Druid连接池
+    url: jdbc:mysql://localhost:3306/wems?serverTimezone=UTC&useSSL=true # 填写你数据库的url和数据库名
+    username: root #登录名
+    password: 123456 #密码
