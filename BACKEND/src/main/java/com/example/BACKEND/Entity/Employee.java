@@ -1,6 +1,8 @@
 package com.example.BACKEND.Entity;
 
-public class Employee {
+import java.io.Serializable;
+
+public class Employee implements Serializable {
 	private String userid;
 	private String username;
 	private String password;
@@ -22,5 +24,5 @@ public class Employee {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 }

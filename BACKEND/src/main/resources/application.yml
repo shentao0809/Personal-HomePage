@@ -1,6 +1,8 @@
 spring:
+  application:
+    name: Person-Homepage
   profiles:
-    active: dev
+    active: test
   datasource:
     druid:
       initial-size: 3 #初始化活跃连接数
@@ -39,3 +41,10 @@ spring:
 mybatis:
   type-aliases-package: com.example.BACKEND.Entity #实体类路径，用于xml文件中resultMap实体类的映射
   mapper-locations: classpath:Mapper/*Mapper.xml #扫描此路径，Dao层与xml的映射路径
+eureka:
+  instance:
+    metadata-map: #下面的参数可被其他客户端通过实例的getMetadata()调用获取
+      name: Person-Homepage
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
